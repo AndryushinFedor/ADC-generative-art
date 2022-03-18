@@ -1,3 +1,14 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
+@font-face {
+    font-family: 'Vela Sans';
+    src: url('./fonts/VelaSans-Regular.ttf');
+    src: local('/'), local('EuclidSquare-Light'),
+        url('./fonts/VelaSans-Bold.ttf') format('truetype'),
+        url('./fonts/VelaSans-ExtraBold.ttf') format('truetype'),
+}
+
 .prototype_11 {
   margin: auto;
   display: flex;
@@ -6,15 +17,62 @@
 }
 
 .but {
-  left: 5%;
   font-family: "Vela Sans";
   font-style: normal;
-  align-self: flex-start;
-  background: #41ef3e;
-  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.476vw 0.893vw;
+  font-size: 1.3vw;
+  position: static;
+  width: 14vw;
+  height: 3vw;
+
+  
+  /* System/Deep Green */
+  
+  background: #41EF3E;
+  border-radius: 0.5vw;
   border: none;
-  font-size: 20px;
-  color: #000;
+  
+}
+
+.text {
+  padding-left: 3%;
+}
+
+.but:hover {
+  background: #fff;
+  border: 0.119vw black solid;
+  transition: 0.3s;
+}
+
+h1 {
+  font-family: 'Vela Sans';
+font-style: normal;
+font-weight: bold;
+font-size: 3.810vw;
+line-height: 143%;
+/* identical to box height, or 92px */
+
+letter-spacing: 0.01em;
+
+color: #000000;
+
+}
+
+p {
+  width: 23.810vw;
+  font-family: 'Vela Sans';
+font-style: normal;
+font-weight: normal;
+font-size: 1.429vw;
+line-height: 1.964vw;
+
+color: rgba(0, 0, 0, 0.7);
+padding-bottom: 3%;
+
 }
 
 .deepface1 {
@@ -165,5 +223,33 @@
 
   .prototype_11 {
     flex-direction: column;
+  }
+
+  h1 {
+    font-size: 9vw;
+    padding-top: 10vw;
+    padding-bottom: 4vw;
+  }
+
+  p {
+    font-size: 4vw;
+    width: 65vw;
+    padding-bottom: 4vw;
+  }
+
+  .but {
+    font-size: 4vw;
+    padding: 0.476vw 0.893vw;
+    position: static;
+    width: 40vw;
+    height: 8vw;
+  
+    
+    /* System/Deep Green */
+    
+    background: #41EF3E;
+    border-radius: 2vw;
+    border: none;
+
   }
 }

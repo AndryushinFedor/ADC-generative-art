@@ -141,6 +141,7 @@ let occupated = []
       circleElement.style.transform = `rotate(${getRandomArbitrary(-15, 15)}deg)`
       circleElement.style.opacity = 1
 
+
     }
   }
 
@@ -170,7 +171,7 @@ let occupated = []
 }
 
   function createHat(circleElement) {
-    if (randomChance(80) == 1) {
+    if (randomChance(40) == 1) {
         const hat = document.createElement('img')
     
         hat.setAttribute('src', `./images/hat${Math.floor(getRandomArbitrary(1,10))}.svg`)
