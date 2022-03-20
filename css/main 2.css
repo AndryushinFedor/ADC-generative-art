@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
 
 @font-face {
-  font-family: 'Vela Sans';
-  src: url('../fonts/VelaSans-Regular.ttf');
-  src: local('/'), local('EuclidSquare-Light'),
-    url('../fonts/VelaSans-Bold.ttf') format('truetype'),
-    url('../fonts/VelaSans-ExtraBold.ttf') format('truetype'),
+    font-family: 'Vela Sans';
+    src: url('./fonts/VelaSans-Regular.ttf');
+    src: local('/'), local('EuclidSquare-Light'),
+        url('./fonts/VelaSans-Bold.ttf') format('truetype'),
+        url('./fonts/VelaSans-ExtraBold.ttf') format('truetype'),
 }
 
 .prototype_11 {
@@ -29,13 +29,13 @@
   width: 14vw;
   height: 3vw;
 
-
+  
   /* System/Deep Green */
-
+  
   background: #41EF3E;
   border-radius: 0.5vw;
   border: none;
-
+  
 }
 
 .text {
@@ -50,28 +50,28 @@
 
 h1 {
   font-family: 'Vela Sans';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 3.810vw;
-  line-height: 143%;
-  /* identical to box height, or 92px */
+font-style: normal;
+font-weight: bold;
+font-size: 3.810vw;
+line-height: 143%;
+/* identical to box height, or 92px */
 
-  letter-spacing: 0.01em;
+letter-spacing: 0.01em;
 
-  color: #000000;
+color: #000000;
 
 }
 
 p {
   width: 23.810vw;
   font-family: 'Vela Sans';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.429vw;
-  line-height: 1.964vw;
+font-style: normal;
+font-weight: normal;
+font-size: 1.429vw;
+line-height: 1.964vw;
 
-  color: rgba(0, 0, 0, 0.7);
-  padding-bottom: 3%;
+color: rgba(0, 0, 0, 0.7);
+padding-bottom: 3%;
 
 }
 
@@ -101,9 +101,8 @@ p {
 
 .frame {
   position: relative;
-  margin: 20px auto;
+  margin: auto;
   width: 1000px;
-  max-width: 1000px;
   height: 700px;
   background: rgb(255, 255, 255);
   overflow: hidden;
@@ -236,7 +235,6 @@ p {
     font-size: 4vw;
     width: 65vw;
     padding-bottom: 4vw;
-    line-height: 100%;
   }
 
   .but {
@@ -245,10 +243,10 @@ p {
     position: static;
     width: 40vw;
     height: 8vw;
-
-
+  
+    
     /* System/Deep Green */
-
+    
     background: #41EF3E;
     border-radius: 2vw;
     border: none;
