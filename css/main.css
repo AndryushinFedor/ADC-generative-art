@@ -222,6 +222,54 @@ p {
     height: 420px;
   }
 
+  .text {
+    padding-bottom: 15vw;
+  }
+
+  .prototype_11 {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 9vw;
+    padding-top: 10vw;
+    padding-bottom: 4vw;
+  }
+
+  p {
+    font-size: 4vw;
+    width: 65vw;
+    padding-bottom: 4vw;
+    line-height: 100%;
+  }
+
+  .but {
+    font-size: 4vw;
+    padding: 0.476vw 0.893vw;
+    position: static;
+    width: 40vw;
+    height: 8vw;
+
+
+    /* System/Deep Green */
+
+    background: #41EF3E;
+    border-radius: 2vw;
+    border: none;
+
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .frame {
+    width: 400px;
+    height: 540px;
+  }
+
+  .text {
+    padding-bottom: 15vw;
+  }
+
   .prototype_11 {
     flex-direction: column;
   }

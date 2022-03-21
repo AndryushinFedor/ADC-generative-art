@@ -160,7 +160,7 @@ function randomChance2(crit, crit2) {
 }
 
 function createHat(circleElement) {
-  if (randomChance(40) == 1) {
+  if (randomChance(35) == 1) {
     const hat = document.createElement('img')
 
     hat.setAttribute('src', `./images/hat${Math.floor(getRandomArbitrary(1,10))}.svg`)
@@ -251,6 +251,8 @@ window.addEventListener('resize', function () {
   occupated = []
   if (container.clientWidth < 840) {
     frame.style.width = (container.clientWidth * 0.8) + 'px'
+    
+    
   } else {
     frame.style.width = (container.clientWidth * 0.6) + 'px'
   }
