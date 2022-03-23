@@ -89,8 +89,10 @@ p {
 
 .deepface3 {
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 20px;
+  bottom: 20px;
+  width: 16%;
+
 }
 
 .deepface4 {
@@ -201,24 +203,29 @@ p {
   transition: all 2s;
 }
 
+.deepface {
+  position: absolute;
+  background-size: cover;
+}
+
 @media screen and (max-width: 1440px) {
   .frame {
-    width: 800px;
-    height: 560px;
+    width: 520px;
+    height: 720px;
   }
 }
 
 @media screen and (max-width: 1240px) {
   .frame {
-    width: 600px;
-    height: 420px;
+    width: 420px;
+    height: 600px;
   }
 }
 
 @media screen and (max-width: 840px) {
   .frame {
-    width: 600px;
-    height: 420px;
+    width: 420px;
+    height: 600px;
   }
 
   .text {

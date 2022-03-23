@@ -1,11 +1,15 @@
 const colors = ['#F26DF8', '#FF5C00', '#FFE500', '#00FF29', '#00FFF0', '#4B3BFF']
 const numFaces = 5000
+const pad = 10
 let sizeMin
 let sizeMax
+let dfaceMin
+let dfaceMax
 let logoSize
 let frameW
 let frameH
 let n
+let occupated = []
 
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min
@@ -23,15 +27,15 @@ function drawLogo(circleElement) {
 
   const deepface = document.createElement('img')
   logoSize = 0.23 * frameW
-  deepface.setAttribute('src', `./images/deepface${Math.floor(getRandomArbitrary(1,6))}.png`)
-  deepface.style.width = logoSize
-  let n = Math.floor(getRandomArbitrary(1, 5))
-  deepface.classList.add(`deepface${n}`)
+  deepface.setAttribute('src', `./images/ADCLogo.svg`)
+  //deepface.style.width = logoSize
+  let n = 3
+  deepface.classList.add(`deepface3`)
   circleElement.appendChild(deepface)
   return n
 }
 
-let occupated = []
+
 
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min
@@ -77,14 +81,48 @@ function changeSVGColor(circle, color) {
 }
 
 function dist(x1, y1, x2, y2) {
-  return Math.floor(Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2)))
+  return Math.floor(Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2)))-4
 }
+function generateLogo() {
+  let top = getRandomArbitrary(pad, frameH - sizeMax - logoSize)
+  let left = getRandomArbitrary(pad, frameW - sizeMax - logoSize)
+  let size = getRandomArbitrary(dfaceMin, dfaceMax)
+  occupated.push([left, top, size+7])
+    const circleElement = document.createElement('div')
+    circleElement.classList.add('deepface')
 
+    circleElement.style.top = [top, 'px'].join('')
+    circleElement.style.left = [left, 'px'].join('')
+    circleElement.style.width = [size, 'px'].join('')
+    circleElement.style.height = [size, 'px'].join('')
+
+    frame.appendChild(circleElement)
+
+    const face = document.createElement('object')
+
+    face.setAttribute('data', `./images/deepface${Math.floor(getRandomArbitrary(1,4))}.svg`)
+    face.classList.add('face')
+    face.setAttribute('type', "image/svg+xml")
+    circleElement.appendChild(face)
+    h = circleElement.clientHeight
+    w = circleElement.clientWidth
+    let svg;
+    var ob = circleElement.querySelector(".face")
+  ob.addEventListener("load", function () {
+    svg = ob.contentDocument;
+    console.log(svg);
+
+    let svgTag = svg.querySelector("svg")
+    svgTag.setAttribute("width", w)
+    svgTag.setAttribute("height", h)
+  }, false);
+    console.log('deep')
+}
 function createCircle(frame, n) {
   let overlap = false;
 
-  let top = getRandomArbitrary(0, frameH - sizeMax)
-  let left = getRandomArbitrary(0, frameW - sizeMax)
+  let top = getRandomArbitrary(pad, frameH - sizeMax)
+  let left = getRandomArbitrary(pad, frameW - sizeMax)
   let size = getRandomArbitrary(sizeMin, sizeMax)
   for (let i = 0; i < occupated.length; i++) {
 
@@ -160,10 +198,10 @@ function randomChance2(crit, crit2) {
 }
 
 function createHat(circleElement) {
-  if (randomChance(35) == 1) {
+  if (randomChance(50) == 1) {
     const hat = document.createElement('img')
 
-    hat.setAttribute('src', `./images/hat${Math.floor(getRandomArbitrary(1,10))}.svg`)
+    hat.setAttribute('src', `./images/hat${Math.floor(getRandomArbitrary(1,12))}.svg`)
     hat.classList.add('hat')
     circleElement.appendChild(hat)
     return true
@@ -231,16 +269,18 @@ function createItem(circleElement) {
 let container
 let frame
 
-document.querySelector(".but").onclick = function () {
+document.querySelector(".but").onclick = function (event) {
+  event.stopPropagation()
   frame.innerHTML = '';
   occupated = []
   frameW = frame.clientWidth;
   frameH = frame.clientHeight;
-  sizeMin = 0.11 * frameW
-  sizeMax = 0.19 * frameW
-
+  sizeMin = 0.14 * frameW
+  sizeMax = 0.2 * frameW
+  dfaceMin = 0.24 * frameW
+  dfaceMax = 0.30 * frameW
   n = drawLogo(frame)
-
+  generateLogo()
   for (var i = 0; i < numFaces; i++) {
     createCircle(frame, n)
   }
@@ -249,21 +289,23 @@ document.querySelector(".but").onclick = function () {
 window.addEventListener('resize', function () {
   frame.innerHTML = ''
   occupated = []
-  if (container.clientWidth < 840) {
-    frame.style.width = (container.clientWidth * 0.8) + 'px'
+  // if (container.clientWidth < 840) {
+  //   frame.style.width = (container.clientWidth * 0.8) + 'px'
+  //   frame.style.height = (container.clientWidth ) + 'px'
     
-    
-  } else {
-    frame.style.width = (container.clientWidth * 0.6) + 'px'
-  }
+  // } else {
+  //   frame.style.width = (container.clientWidth * 0.5) + 'px'
+  //   frame.style.height = (container.clientWidth * 0.7) + 'px'
+  // }
 
   frameW = frame.clientWidth
   frameH = frame.clientHeight
-  sizeMin = 0.11 * frameW
-  sizeMax = 0.19 * frameW
-
+  sizeMin = 0.14 * frameW
+  sizeMax = 0.20 * frameW
+  dfaceMin = 0.24 * frameW
+  dfaceMax = 0.30 * frameW
   n = drawLogo(frame)
-
+  generateLogo()
   for (var i = 0; i < numFaces; i++) {
     createCircle(frame, n)
   }
@@ -278,12 +320,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   frameW = frame.clientWidth
   frameH = frame.clientHeight
-  sizeMin = 0.11 * frameW
-  sizeMax = 0.19 * frameW
+  sizeMin = 0.14 * frameW
+  sizeMax = 0.20 * frameW
+  dfaceMin = 0.24 * frameW
+  dfaceMax = 0.30 * frameW
   console.log(sizeMin, sizeMax)
 
   n = drawLogo(frame)
 
+  generateLogo()
   for (var i = 0; i < numFaces; i++) {
     createCircle(frame, n)
   }
