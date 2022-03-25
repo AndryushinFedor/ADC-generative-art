@@ -9,12 +9,27 @@
     url('../fonts/VelaSans-ExtraBold.ttf') format('truetype'),
 }
 
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 4vw;
+}
+
+.navbar h2 {
+  padding-left: 2vw;
+  font-family: "Vela Sans";
+  font-style: normal;
+  font-size: 1vw;
+}
+
 .prototype_11 {
   margin: auto;
   display: flex;
   height: 100vh;
   align-items: center;
 }
+
 
 .but {
   font-family: "Vela Sans";
@@ -38,8 +53,8 @@
 
 }
 
-.text {
-  padding-left: 3%;
+.info {
+  padding-left: 10vw;
 }
 
 .but:hover {
@@ -62,17 +77,38 @@ h1 {
 
 }
 
-p {
-  width: 23.810vw;
+.text p {
+  width: 28vw;
   font-family: 'Vela Sans';
   font-style: normal;
   font-weight: normal;
   font-size: 1.429vw;
   line-height: 1.964vw;
+  padding-bottom: 1vw;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.about {
+  padding-top: 14vw;
+  width: 26vw;
+}
+h3 {
+  font-family: 'Vela Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.429vw;
+  line-height: 2vw;
+  padding-bottom: 0.5vw;
+}
+
+.about p {
+  font-family: 'Vela Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.833vw;
+  line-height: 1.190vw;
 
   color: rgba(0, 0, 0, 0.7);
-  padding-bottom: 3%;
-
 }
 
 .deepface1 {
@@ -200,12 +236,18 @@ p {
   background-size: cover;
   transform: rotate(0);
   opacity: 0;
-  transition: all 2s;
+  transition: all 3.1s;
+}
+
+@keyframes df {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .deepface {
   position: absolute;
   background-size: cover;
+  animation: df 3s ease-out;
 }
 
 @media screen and (max-width: 1440px) {
@@ -223,13 +265,25 @@ p {
 }
 
 @media screen and (max-width: 840px) {
+
+  .info {
+    padding-left: 0vw;
+  }
+  
+  .prototype_11 {
+    height: 140vh;
+  }
   .frame {
     width: 420px;
     height: 600px;
   }
 
+  .navbar {
+    padding-top: 2vw;
+  }
+
   .text {
-    padding-bottom: 15vw;
+    padding-bottom: 0vw;
   }
 
   .prototype_11 {
@@ -238,12 +292,26 @@ p {
 
   h1 {
     font-size: 9vw;
-    padding-top: 10vw;
-    padding-bottom: 4vw;
+    padding-top: 1vw;
+    padding-bottom: 2vw;
   }
 
-  p {
+  h3 {
     font-size: 4vw;
+    width: 65vw;
+    padding-bottom: 4vw;
+    line-height: 100%;
+  }
+
+  .text p {
+    font-size: 4vw;
+    width: 65vw;
+    padding-bottom: 4vw;
+    line-height: 100%;
+  }
+
+  .about p {
+    font-size: 2.8vw;
     width: 65vw;
     padding-bottom: 4vw;
     line-height: 100%;
@@ -273,11 +341,12 @@ p {
   }
 
   .text {
-    padding-bottom: 15vw;
+    padding-bottom: 2vw;
   }
 
   .prototype_11 {
     flex-direction: column;
+    height: 110vh;
   }
 
   h1 {
