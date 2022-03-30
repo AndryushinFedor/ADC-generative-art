@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-bottom: 4vw;
+  padding-bottom: 12vw;
 }
 
 .navbar h2 {
@@ -90,7 +90,7 @@ h1 {
 }
 
 .about {
-  padding-top: 14vw;
+  padding-top: 10vw;
   width: 26vw;
 }
 h3 {
@@ -268,10 +268,19 @@ h3 {
 
 @media screen and (max-width: 840px) {
 
+  .about {
+    padding-top: 14vw;
+  }
+
+  .navbar h2 {
+    font-size: 4vw;
+    padding-left: 20vw;
+  }
+
   .info {
     padding-left: 0vw;
   }
-  
+
   .prototype_11 {
     height: 140vh;
   }
@@ -306,7 +315,7 @@ h3 {
   }
 
   .text p {
-    font-size: 4vw;
+    font-size: 3.6vw;
     width: 65vw;
     padding-bottom: 4vw;
     line-height: 100%;
@@ -338,8 +347,12 @@ h3 {
 
 @media screen and (max-width: 440px) {
   .frame {
-    width: 400px;
-    height: 540px;
+    width: 340px;
+    height: 500px;
+  }
+
+  .info {
+    padding-top: 4vw;
   }
 
   .text {
@@ -348,7 +361,12 @@ h3 {
 
   .prototype_11 {
     flex-direction: column;
-    height: 110vh;
+    height: 124vh;
+  }
+
+  .navbar h2 {
+    font-size: 4vw;
+    padding-left: 19vw;
   }
 
   h1 {
@@ -357,18 +375,27 @@ h3 {
     padding-bottom: 4vw;
   }
 
-  p {
-    font-size: 4vw;
+  h3 {
+    font-size: 5vw;
+
+  }
+
+  .about p {
+    font-size: 3.3vw;
     width: 65vw;
     padding-bottom: 4vw;
     line-height: 100%;
+  }
+
+  .text p{
+    font-size: 5vw;
   }
 
   .but {
     font-size: 4vw;
     padding: 0.476vw 0.893vw;
     position: static;
-    width: 40vw;
+    width: 100%;
     height: 8vw;
 
 

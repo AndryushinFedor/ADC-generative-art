@@ -17,20 +17,11 @@ function getFrame() {
 }
 
 function drawLogo(circleElement) {
-
   const deepface = document.createElement('img')
   logoSize = 0.23 * frameW
   deepface.setAttribute('src', `./images/ADCLogo.svg`)
   deepface.classList.add(`deepface3`)
   circleElement.appendChild(deepface)
-}
-
-function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min
-}
-
-function sample(array) {
-  return array[Math.floor(Math.random() * array.length)]
 }
 
 function faceFill(circle, color) {
