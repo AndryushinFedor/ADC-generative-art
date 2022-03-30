@@ -44,10 +44,11 @@ function sample(array) {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-function faceFill(circle, color) {
-  let ob = circle.querySelector(".face")
-  let w
-  let h
+function changeSVGColor(circle, color) {
+  var ob = circle.querySelector(".face")
+  console.log(ob)
+  let w;
+  let h;
   if (createHat(circle) || (createItem(circle))) {
     h = 0.6 * circle.clientHeight
     w = 0.6 * circle.clientWidth
@@ -75,6 +76,7 @@ function faceFill(circle, color) {
     svgTag.setAttribute("height", h)
     svgTag.querySelector("path").setAttribute("fill", color)
   }, false);
+  console.log('changed')
 }
 
 function dist(x1, y1, x2, y2) {
@@ -82,10 +84,10 @@ function dist(x1, y1, x2, y2) {
 }
 
 function generateLogo() {
-    let top = getRandomArbitrary(pad, frameH - sizeMax - logoSize)
-    let left = getRandomArbitrary(pad, frameW - sizeMax - logoSize)
-    let size = getRandomArbitrary(dfaceMin, dfaceMax)
-    occupated.push([left, top, size+7])
+  let top = getRandomArbitrary(pad, frameH - sizeMax - logoSize)
+  let left = getRandomArbitrary(pad, frameW - sizeMax - logoSize)
+  let size = getRandomArbitrary(dfaceMin, dfaceMax)
+  occupated.push([left, top, size+7])
     const circleElement = document.createElement('div')
     circleElement.classList.add('deepface')
 
@@ -102,6 +104,8 @@ function generateLogo() {
     face.classList.add('face')
     face.setAttribute('type', "image/svg+xml")
     circleElement.appendChild(face)
+    h = circleElement.clientHeight
+    w = circleElement.clientWidth
     let svg;
     var ob = circleElement.querySelector(".face")
     ob.addEventListener("load", function () {
@@ -109,8 +113,8 @@ function generateLogo() {
       console.log(svg);
 
       let svgTag = svg.querySelector("svg")
-      svgTag.setAttribute("width", circleElement.clientWidth)
-      svgTag.setAttribute("height",circleElement.clientHeight)
+      svgTag.setAttribute("width", w)
+      svgTag.setAttribute("height", h)
     }, false);
 
 }
@@ -161,7 +165,7 @@ function createCircle(frame, n) {
     face.classList.add('face')
     face.setAttribute('type', "image/svg+xml")
     circleElement.appendChild(face)
-    faceFill(circleElement, sample(colors))
+    changeSVGColor(circleElement, sample(colors))
 
     circleElement.style.transform = `rotate(${getRandomArbitrary(-15, 15)}deg)`
     circleElement.style.opacity = 1
