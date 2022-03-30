@@ -25,8 +25,6 @@ function drawLogo(circleElement) {
   circleElement.appendChild(deepface)
 }
 
-
-
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min
 }
@@ -102,6 +100,7 @@ function generateLogo() {
     }, false);
 
 }
+
 function createCircle(frame) {
   let overlap = false;
 

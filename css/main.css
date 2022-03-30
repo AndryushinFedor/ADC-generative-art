@@ -21,6 +21,7 @@
   font-family: "Vela Sans";
   font-style: normal;
   font-size: 1vw;
+  color: #000000;
 }
 
 .prototype_11 {
@@ -78,14 +79,14 @@ h1 {
 }
 
 .text p {
-  width: 28vw;
+  width: 33vw;
   font-family: 'Vela Sans';
   font-style: normal;
   font-weight: normal;
-  font-size: 1.429vw;
-  line-height: 1.964vw;
+  font-size: 1.7vw;
+  line-height: 2.3vw;
   padding-bottom: 1vw;
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0,);
 }
 
 .about {
@@ -102,6 +103,7 @@ h3 {
 }
 
 .about p {
+  width: 22vw;
   font-family: 'Vela Sans';
   font-style: normal;
   font-weight: normal;
