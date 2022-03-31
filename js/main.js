@@ -1,4 +1,7 @@
 const colors = ['#F26DF8', '#FF5C00', '#FFE500', '#00FF29', '#00FFF0', '#4B3BFF']
+
+//число попыток просчитать занято ли ближайщее место
+
 const numFaces = 5000
 const paddingEdge = 22
 const button = document.querySelector(".but")
@@ -23,6 +26,8 @@ function drawLogo(circleElement) {
   deepface.classList.add(`deepface3`)
   circleElement.appendChild(deepface)
 }
+
+//наполнение чубрика элементами
 
 function faceFill(circle, color) {
   let ob = circle.querySelector(".face")
@@ -52,7 +57,7 @@ function faceFill(circle, color) {
   }, false);
 }
 
-// корень из суммы квадратов катетов (гипотинуза)
+// корень из суммы квадратов катетов (гипотинуза), высчитывает занимаемую площадь
 
 function dist(x1, y1, x2, y2) {
   return Math.floor(Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2)))-7
@@ -91,6 +96,8 @@ function generateLogo() {
     }, false);
 
 }
+
+//пересчет позиции, чтобы не было наслоений
 
 function createCircle(frame) {
   let overlap = false;
@@ -131,6 +138,8 @@ function createCircle(frame) {
   }
 }
 
+//вероятность появления предметов с одним критерием
+
 function randomChance1Crit(crit) {
   const number = Math.floor(Math.random() * 100) + 1
   switch (true) {
@@ -141,6 +150,8 @@ function randomChance1Crit(crit) {
       return 0
   }
 }
+
+//вероятность появления предметов с двумя критериеми
 
 function randomChance2Crit(crit, crit2) {
   const number = Math.floor(Math.random() * 100) + 1
@@ -192,6 +203,8 @@ function createItem(circleElement) {
     return false;
   }
 }
+
+//перегенерация фрейма
 
 function generate(){
   frame.innerHTML = '';
