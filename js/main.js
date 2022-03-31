@@ -1,6 +1,6 @@
 const colors = ['#F26DF8', '#FF5C00', '#FFE500', '#00FF29', '#00FFF0', '#4B3BFF']
 const numFaces = 5000
-const paddingEdge = 20
+const paddingEdge = 22
 const button = document.querySelector(".but")
 let sizeMin, sizeMax, dfaceMin, dfaceMax, logoSize, frameW, frameH, occupated = [],container, frame
 
@@ -55,7 +55,7 @@ function faceFill(circle, color) {
 // корень из суммы квадратов катетов (гипотинуза)
 
 function dist(x1, y1, x2, y2) {
-  return Math.floor(Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2)))-4
+  return Math.floor(Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2)))-7
 }
 
 function generateLogo() {
